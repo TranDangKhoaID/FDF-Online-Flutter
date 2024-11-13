@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-class PdfController extends GetxController {
+class PDFController extends GetxController {
   final supabase = Supabase.instance.client;
   RxList<FileObject> pdfs = <FileObject>[].obs;
   var isLoading = true.obs;
@@ -25,4 +25,6 @@ class PdfController extends GetxController {
       //return;
     }
   }
+
+  //Future<void> get
 }

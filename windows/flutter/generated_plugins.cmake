@@ -6,7 +6,6 @@ list(APPEND FLUTTER_PLUGIN_LIST
   app_links
   objectbox_flutter_libs
   rive_common
-  syncfusion_pdfviewer_windows
   url_launcher_windows
 )
 
