@@ -55,6 +55,8 @@ dependencies:
   open_file: ^3.5.9
   path_provider: ^2.1.5
   supabase_flutter: ^2.8.0
+  dio: ^5.7.0
+  syncfusion_flutter_pdfviewer: ^27.1.58
 
 dev_dependencies:
   flutter_test:

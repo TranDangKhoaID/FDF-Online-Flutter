@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pdf_online/common/share_color.dart';
 import 'package:pdf_online/controllers/home_controller.dart';
+import 'package:pdf_online/screens/pdf_screen/pdf_screen.dart';
 import 'package:pdf_online/widgets/loading_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -37,23 +38,30 @@ class _HomeScreenState extends State<HomeScreen> {
             itemCount: _controller.folders.length,
             itemBuilder: (context, index) {
               final folder = _controller.folders[index];
-              return Container(
-                padding: EdgeInsets.all(15),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      ShareColors.kPrimaryColor.withOpacity(0.8),
-                      Colors.grey,
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
+              return GestureDetector(
+                onTap: () => Get.to(
+                  () => PdfScreen(
+                    folderName: folder.name,
                   ),
-                  borderRadius: BorderRadius.circular(15),
                 ),
-                child: Text(
-                  folder.name,
-                  style: TextStyle(
-                    fontSize: 20,
+                child: Container(
+                  padding: EdgeInsets.all(15),
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        ShareColors.kPrimaryColor.withOpacity(0.8),
+                        Colors.grey,
+                      ],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    ),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Text(
+                    folder.name,
+                    style: TextStyle(
+                      fontSize: 20,
+                    ),
                   ),
                 ),
               );
